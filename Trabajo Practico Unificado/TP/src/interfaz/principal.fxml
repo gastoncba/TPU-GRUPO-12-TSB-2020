@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaz.PrincipalController">
+   <children>
+      <Label fx:id="lblOrigenDatos" layoutX="14.0" layoutY="14.0" text="Origen de datos" />
+      <Label fx:id="lblUbicacion" layoutX="106.0" layoutY="14.0" text="C:\Users\Usuario\Downloads\TSB\TP\120819-054029" />
+      <Button fx:id="btnCambiar" layoutX="451.0" layoutY="10.0" mnemonicParsing="false" onAction="#cambiarUbicacion" text="Cambiar..." />
+      <Button fx:id="btnCargarDatos" layoutX="14.0" layoutY="46.0" mnemonicParsing="false" onAction="#cargarDatos" text="Cargar Datos" />
+      <ListView fx:id="lvwResultados" layoutX="12.0" layoutY="230.0" prefHeight="200.0" prefWidth="647.0" />
+      <Label fx:id="lblOrigenDatos1" layoutX="15.0" layoutY="203.0" text="Resultados" />
+      <Line endX="544.0" layoutX="115.0" layoutY="82.0" startX="-100.0" />
+      <Label fx:id="lblDistricto" layoutX="14.0" layoutY="94.0" text="Districto" />
+      <ComboBox fx:id="cboDistrictos" layoutX="72.0" layoutY="90.0" onAction="#elegirDistricto" prefHeight="25.0" prefWidth="253.0" />
+      <Label fx:id="lblSeccion" layoutX="12.0" layoutY="124.0" text="Seccion" />
+      <ComboBox fx:id="cboSecciones" layoutX="72.0" layoutY="120.0" onAction="#elegirSeccion" prefHeight="25.0" prefWidth="253.0" />
+      <Label fx:id="lblCircuito" layoutX="12.0" layoutY="155.0" text="Circuito" />
+      <ComboBox fx:id="cboCircuitos" layoutX="72.0" layoutY="151.0" onAction="#elegirCircuito" prefHeight="25.0" prefWidth="253.0" />
+   </children>
+</AnchorPane>
