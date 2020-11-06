@@ -1,6 +1,7 @@
 package clases;
 
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -31,6 +32,12 @@ public class TSBHashtableDATest {
 
     @org.junit.Test
     public void containsKey() {
+
+        //deberia ser null ya que no hay pais con key 1000
+        assertNull(ht1.get(1000));
+
+        //no deberia ser null ya que hay un pais con key: 5
+        assertNotNull(ht1.get(5));
     }
 
     @org.junit.Test
@@ -154,5 +161,29 @@ public class TSBHashtableDATest {
             System.out.println(i);
         }
 
+    }
+
+    @org.junit.Test
+    public void testEntrySetIteratorRemove() {
+
+        Set<Map.Entry<Integer, String>> se = ht1.entrySet();
+        Iterator<Map.Entry<Integer, String>> it = se.iterator();
+        while(it.hasNext())
+        {
+            Map.Entry<Integer, String> entry = it.next();
+
+            if (entry.getKey().equals(4)) {it.remove();}
+
+        }
+
+        //recoremos con otro iterador para ver si el pais con key: 4 fue removido
+        Iterator<Map.Entry<Integer, String>> it2 = se.iterator();
+        while(it2.hasNext())
+        {
+            Map.Entry<Integer, String> entry = it2.next();
+
+            System.out.println(entry);
+
+        }
     }
 }
