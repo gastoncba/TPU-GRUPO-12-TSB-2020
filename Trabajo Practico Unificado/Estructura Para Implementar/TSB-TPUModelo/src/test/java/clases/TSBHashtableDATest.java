@@ -166,24 +166,6 @@ public class TSBHashtableDATest {
     @org.junit.Test
     public void testEntrySetIteratorRemove() {
 
-        Set<Map.Entry<Integer, String>> se = ht1.entrySet();
-        Iterator<Map.Entry<Integer, String>> it = se.iterator();
-        while(it.hasNext())
-        {
-            Map.Entry<Integer, String> entry = it.next();
 
-            if (entry.getKey().equals(4)) {it.remove();}
-
-        }
-
-        //recoremos con otro iterador para ver si el pais con key: 4 fue removido
-        Iterator<Map.Entry<Integer, String>> it2 = se.iterator();
-        while(it2.hasNext())
-        {
-            Map.Entry<Integer, String> entry = it2.next();
-
-            System.out.println(entry);
-
-        }
     }
 }

@@ -868,7 +868,6 @@ public class TSBHashtableDA<K,V> implements Map<K,V>, Cloneable, Serializable
 
             private int actual;
 
-            private int anterior;
 
             private int cantElementosTotales;
 
@@ -922,8 +921,6 @@ public class TSBHashtableDA<K,V> implements Map<K,V>, Cloneable, Serializable
                     throw new NoSuchElementException("next(): no existe el elemento pedido...");
                 }
 
-                //guadamos la posicion anterior al elemento actual..
-                anterior = actual;
 
                 actual++;
                 Entry<K,V> entry = (Entry<K, V>) TSBHashtableDA.this.table[actual];
@@ -964,15 +961,7 @@ public class TSBHashtableDA<K,V> implements Map<K,V>, Cloneable, Serializable
                     throw new IllegalStateException("remove(): debe invocar a next() antes de remove()..."); 
                 }
 
-                //se obtiene el entry de la posicion actual...
-                Entry<K,V> entry = (Entry<K, V>) TSBHashtableDA.this.table[actual];
 
-                //se cambia el estado de ese entry en la posicion a tumba
-                entry.setState(TOMBSTONE);
-
-                //se actualiza la posicion del actual
-                actual = anterior;
-                
                 // avisar que el remove() válido para next() ya se activó...
                 next_ok = false;
                                 
@@ -1088,7 +1077,6 @@ public class TSBHashtableDA<K,V> implements Map<K,V>, Cloneable, Serializable
 
             private int actual;
 
-            private int anterior;
 
             private int cantElementosTotales;
 
@@ -1142,7 +1130,6 @@ public class TSBHashtableDA<K,V> implements Map<K,V>, Cloneable, Serializable
                     throw new NoSuchElementException("next(): no existe el elemento pedido...");
                 }
 
-                anterior = actual;
 
                 actual++;
                 Entry<K,V> entry = (Entry<K, V>) TSBHashtableDA.this.table[actual];
@@ -1180,15 +1167,6 @@ public class TSBHashtableDA<K,V> implements Map<K,V>, Cloneable, Serializable
                 { 
                     throw new IllegalStateException("remove(): debe invocar a next() antes de remove()..."); 
                 }
-
-                //se obtiene el entry de la posicion actual...
-                Entry<K,V> entry = (Entry<K, V>) TSBHashtableDA.this.table[actual];
-
-                //se cambia el estado de ese entry en la posicion a tumba
-                entry.setState(TOMBSTONE);
-
-                //se actualiza la posicion del actual
-                actual = anterior;
 
                 // avisar que el remove() válido para next() ya se activó...
                 next_ok = false;
@@ -1310,7 +1288,6 @@ public class TSBHashtableDA<K,V> implements Map<K,V>, Cloneable, Serializable
                     throw new NoSuchElementException("next(): no existe el elemento pedido...");
                 }
 
-                anterior = actual;
 
                 actual++;
                 Entry<K,V> entry = (Entry<K, V>) TSBHashtableDA.this.table[actual];
@@ -1350,15 +1327,6 @@ public class TSBHashtableDA<K,V> implements Map<K,V>, Cloneable, Serializable
                 { 
                     throw new IllegalStateException("remove(): debe invocar a next() antes de remove()..."); 
                 }
-
-                //se obtiene el entry de la posicion actual...
-                Entry<K,V> entry = (Entry<K, V>) TSBHashtableDA.this.table[actual];
-
-                //se cambia el estado de ese entry en la posicion a tumba
-                entry.setState(TOMBSTONE);
-
-                //se actualiza la posicion del actual
-                actual = anterior;
 
                 // avisar que el remove() válido para next() ya se activó...
                 next_ok = false;
