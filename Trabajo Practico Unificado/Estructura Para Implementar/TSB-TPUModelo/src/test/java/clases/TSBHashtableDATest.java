@@ -160,12 +160,36 @@ public class TSBHashtableDATest {
         for (String i: values) {
             System.out.println(i);
         }
-
     }
 
     @org.junit.Test
     public void testEntrySetIteratorRemove() {
 
+        //se hace el primer recorrido
+        Collection<Integer> sk = ht1.keySet();
+        Iterator<Integer> it = sk.iterator();
+
+        System.out.println("Primer recorrido");
+        while(it.hasNext())
+        {
+            Integer i = it.next();
+            System.out.println(i);
+            if (i.equals(4)) {it.remove();}
+        }
+
+        //segundo recorrido para verificar el borrado del pais Mexico
+        System.out.println("Segundo recorrido");
+        Iterator<Integer> it2 = sk.iterator();
+        while(it2.hasNext())
+        {
+            Integer i = it2.next();
+            System.out.println(i);
+        }
+
+        //se verifica que el pais con la key : 4 --> Mexico
+        assertNull(ht1.get(4));
+
+        assertNull(ht1.get(10000));
 
     }
 }
